@@ -101,7 +101,7 @@ if ($visiteur >= $level_admin && $level_admin > -1) {
 
                 echo '<script type="text/javascript" src="modules/Admin/scripts/jquery-1.6.1.min.js"></script>'
                 . '<script type="text/javascript" src="media/js/jquery-ui/jquery-ui-1.8.21.custom.min.js"></script>' //jquery c'est moche na !!
-                . '<link title="style" type="text/css" rel="stylesheet" href="media/js/jquery-ui/css/smoothness/jquery-ui-1.8.21.custom.css" />' // Mais non c'est pas moche d'inclure du css comme ça à l'arrache XD
+                . '<link title="style" type="text/css" rel="stylesheet" href="media/js/jquery-ui/css/smoothness/jquery-ui-1.8.21.custom.css" />' // Mais non c'est pas moche d'inclure du css comme Ã§a Ã  l'arrache XD
                 . "<div class=\"content-box\">\n"
 	        . "<div class=\"content-box-header\"><h3>" . _ADMINWEBTV . "</h3>\n"
 	        . "<div style=\"text-align:right;\"><a href=\"help/" . $language . "/Webtvtwitch.php\" rel=\"modal\">\n"
@@ -135,8 +135,8 @@ if ($visiteur >= $level_admin && $level_admin > -1) {
 				dayNames: [\"Dimanche\", \"Lundi\", \"Mardi\", \"Mercredi\", \"Jeudi\", \"Vendredi\", \"Samedi\"],
 				dayNamesMin: [\"Di\", \"Lu\", \"Ma\", \"Me\", \"Je\", \"Ve\", \"Sa\"],
 				dayNamesShort: [\"Dim\", \"Lun\", \"Mar\", \"Mer\", \"Jeu\", \"Ven\", \"Sam\"],
-				monthNames: [\"Janvier\",\"Fevrier\",\"Mars\",\"Avril\",\"Mai\",\"Juin\",\"Juillet\",\"Aôut\",\"Septembre\",\"Octobre\",\"Novembre\",\"Décembre\"],
-				nextText: \"Suivant\", prevText: \"Précédent\",
+				monthNames: [\"Janvier\",\"Fevrier\",\"Mars\",\"Avril\",\"Mai\",\"Juin\",\"Juillet\",\"AÃ´ut\",\"Septembre\",\"Octobre\",\"Novembre\",\"DÃ©cembre\"],
+				nextText: \"Suivant\", prevText: \"PrÃ©cÃ©dent\",
 				firstDay: 1
 			});
 		});
@@ -215,8 +215,8 @@ if ($visiteur >= $level_admin && $level_admin > -1) {
 				dayNames: [\"Dimanche\", \"Lundi\", \"Mardi\", \"Mercredi\", \"Jeudi\", \"Vendredi\", \"Samedi\"],
 				dayNamesMin: [\"Di\", \"Lu\", \"Ma\", \"Me\", \"Je\", \"Ve\", \"Sa\"],
 				dayNamesShort: [\"Dim\", \"Lun\", \"Mar\", \"Mer\", \"Jeu\", \"Ven\", \"Sam\"],
-				monthNames: [\"Janvier\",\"Fevrier\",\"Mars\",\"Avril\",\"Mai\",\"Juin\",\"Juillet\",\"Aôut\",\"Septembre\",\"Octobre\",\"Novembre\",\"Décembre\"],
-				nextText: \"Suivant\", prevText: \"Précédent\",
+				monthNames: [\"Janvier\",\"Fevrier\",\"Mars\",\"Avril\",\"Mai\",\"Juin\",\"Juillet\",\"AÃ´ut\",\"Septembre\",\"Octobre\",\"Novembre\",\"DÃ©cembre\"],
+				nextText: \"Suivant\", prevText: \"PrÃ©cÃ©dent\",
 				firstDay: 1
 			});
 		});
@@ -569,7 +569,7 @@ if ($visiteur >= $level_admin && $level_admin > -1) {
 	function check_url() {
 		if($_POST['url'] != '') {
 			sleep(2);  //on fait genre le serveur cherche XD
-			// on regarde si il y a bien le code object \o/ peut être à améliorer ;)
+			// on regarde si il y a bien le code object \o/ peut Ãªtre Ã  amÃ©liorer ;)
 			if(preg_match('/object/', stripslashes($_POST['url']), $matches)) echo '<span style="color:#008000;">Code Tv ok</span>';
 			else echo '<span style="color:#B00000;">copier le code embed flash de votre web tv !</span>';
 		}
