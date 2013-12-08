@@ -29,7 +29,7 @@ if(extension_loaded('openssl')) {
 		$img_tv = 'programme_tv.png';
 	}
 } else {
-	echo 'L\'extension openssl n\'est pas activé !';
+	echo 'L\'extension openssl n\'est pas activÃ© !';
 }
 
 echo '<script type="text/javascript" src="modules/Admin/scripts/jquery-1.6.1.min.js"></script>'
@@ -45,16 +45,19 @@ $dimanche = $samedi + 86400;
 
 $sql2 = mysql_query("SELECT active FROM " . BLOCK_TABLE . " WHERE bid = '" . $bid . "'");
 list($active) = mysql_fetch_array($sql2);
-if ($active == 3 || $active == 4) {	echo '<div class="webtv_programme">'
+if ($active == 3 || $active == 4) {
+	echo '<div class="webtv_programme">'
 	. '<div style="float:left;display:block;margin-left:20px;"><img src="modules/Web_tv_twitch/images/'. $img_tv .'" alt="" title="Programme WebTV" /><br />'
 	. 'Du '. strftime("%d-%m-%Y", $lundi) .' au '. strftime("%d-%m-%Y", $dimanche) .'</div>'
-	. '<div id="webtv" style="margin-left:250px!important;width:250px!important;">';} else {	echo '<div class="webtv_programme">'
+	. '<div id="webtv" style="margin-left:250px!important;width:250px!important;">';
+} else {
+	echo '<div class="webtv_programme">'
 	. '<div style="text-align:center;"><img src="modules/Web_tv_twitch/images/'. $img_tv .'" alt="" title="Programme WebTV" /><br />'
 	. 'Du '. strftime("%d-%m-%Y", $lundi) .' au '. strftime("%d-%m-%Y", $dimanche) .'</div>'
 	. '<div id="webtv">';
 }
 
-// on met en cache vue que ça fait beaucoup de requette sql :o
+// on met en cache vue que Ã§a fait beaucoup de requette sql :o
 $cache = 'modules/Web_tv_twitch/block_cache.html';
 $expire = time() - CACHE_TIME; // valable 1 heure 3600
 
@@ -65,7 +68,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 
 	echo '<ul>';
 
-	//on affiche le programme de la semaine en cours , y a pas un truc plus simple ? une boucle chaque jour ça fait beaucoup XD quoi que une grosse boucle puis en faire une chaque jour ca reviens au même non ?
+	//on affiche le programme de la semaine en cours , y a pas un truc plus simple ? une boucle chaque jour Ã§a fait beaucoup XD quoi que une grosse boucle puis en faire une chaque jour ca reviens au mÃªme non ?
 
 	echo '<li class="toggleTv">';
 
@@ -75,7 +78,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 	. '<ul class="subMenu'; if(date('w') == '1') echo ' this_day'; echo '">';
 	while ($r_sql = mysql_fetch_array($sql_programme_lundi, MYSQL_ASSOC)) {
 		$date = strftime("%d", $r_sql['date']);
-		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> '. $r_sql['heure'] .' : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
+		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> De '. $r_sql['heure'] .'H : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
 
 	}
 	if($count_event_lundi == 0) echo '<li>'. _NOEVENTWEBTV .'</li>';
@@ -88,7 +91,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 	. '<ul class="subMenu'; if(date('w') == '2') echo ' this_day'; echo '">';
 	while ($r_sql = mysql_fetch_array($sql_programme_mardi, MYSQL_ASSOC)) {
 		$date = strftime("%d", $r_sql['date']);
-		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> '. $r_sql['heure'] .' : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
+		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> De '. $r_sql['heure'] .'H : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
 
 	}
 	if($count_event_mardi == 0) echo '<li>'. _NOEVENTWEBTV .'</li>';
@@ -101,7 +104,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 	. '<ul class="subMenu'; if(date('w') == '3') echo ' this_day'; echo '">';
 	while ($r_sql = mysql_fetch_array($sql_programme_mercredi, MYSQL_ASSOC)) {
 		$date = strftime("%d", $r_sql['date']);
-		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> '. $r_sql['heure'] .' : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
+		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> De '. $r_sql['heure'] .'H : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
 
 	}
 	if($count_event_mercredi == 0) echo '<li>'. _NOEVENTWEBTV .'</li>';
@@ -114,7 +117,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 	. '<ul class="subMenu'; if(date('w') == '4') echo ' this_day'; echo '">';
 	while ($r_sql = mysql_fetch_array($sql_programme_jeudi, MYSQL_ASSOC)) {
 		$date = strftime("%d", $r_sql['date']);
-		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> '. $r_sql['heure'] .' : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
+		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> De '. $r_sql['heure'] .'H : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
 
 	}
 	if($count_event_jeudi == 0) echo '<li>'. _NOEVENTWEBTV .'</li>';
@@ -127,7 +130,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 	. '<ul class="subMenu'; if(date('w') == '5') echo ' this_day'; echo '">';
 	while ($r_sql = mysql_fetch_array($sql_programme_vendredi, MYSQL_ASSOC)) {
 		$date = strftime("%d", $r_sql['date']);
-		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> '. $r_sql['heure'] .' : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
+		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> De '. $r_sql['heure'] .'H : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
 
 	}
 	if($count_event_vendredi == 0) echo '<li>'. _NOEVENTWEBTV .'</li>';
@@ -140,7 +143,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 	. '<ul class="subMenu'; if(date('w') == '6') echo ' this_day'; echo '">';
 	while ($r_sql = mysql_fetch_array($sql_programme_samedi, MYSQL_ASSOC)) {
 		$date = strftime("%d", $r_sql['date']);
-		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> '. $r_sql['heure'] .' : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
+		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> De '. $r_sql['heure'] .'H : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
 
 	}
 	if($count_event_samedi == 0) echo '<li>'. _NOEVENTWEBTV .'</li>';
@@ -153,7 +156,7 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 	. '<ul class="subMenu'; if(date('w') == '0') echo ' this_day'; echo '">';
 	while ($r_sql = mysql_fetch_array($sql_programme_dimanche, MYSQL_ASSOC)) {
 		$date = strftime("%d", $r_sql['date']);
-		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> '. $r_sql['heure'] .' : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
+		echo '<li><img src="modules/Web_tv_twitch/images/jeux/16/'. $r_sql['jeux'] .'" alt="" title="'. $r_sql['titre_jeux'] .'" style="display:inline;" /> De '. $r_sql['heure'] .'H : <a href="index.php?file=Web_tv_twitch&amp;op=view_tv&amp;id='. $r_sql['web_tv'] .'" style="display:inline;">'. stripslashes($r_sql['titre']) .'</a></li>';
 
 	}
 	if($count_event_dimanche == 0) echo '<li>'. _NOEVENTWEBTV .'</li>';
@@ -167,6 +170,3 @@ if(file_exists($cache) && filemtime($cache) > $expire) {
 }
 
 ?>
-
-
-
