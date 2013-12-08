@@ -20,3 +20,5 @@ Credits :
 Merci à tous pour les infos utiles :)
 
 Changelog :
+
+Le 08/12/2013 : Ajout du style pour les tableaux historiques et corection de quelque fautes
