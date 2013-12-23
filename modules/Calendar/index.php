@@ -88,7 +88,7 @@ function index(){
 				else $date_jour_w = strftime('%e', $wmp['date']);
 				if ($this->month_number == $date_mois_w && $this->year == $date_an_w) {
 					$this->month_data[trim($date_jour_w)]['id'][] = $wmp['id'];
-					$this->month_data[trim($date_jour_w)]['event_title'][] = "<img src=\"modules/Web_tv_twitch/images/about.png\" alt=\"\" title=\"Plus d'info\" /></a><a href=\"index.php?file=Web_tv_twitch&op=view_tv&tv=". $wmp['web_tv'] ."\"><img src=\"modules/Web_tv_twitch/images/jeux/16/". $wmp['jeux'] ."\" alt=\"\" title=\"". htmlentities($wmp['titre_jeux']) ." : ". htmlentities($wmp['titre']) ."\" />";
+					$this->month_data[trim($date_jour_w)]['event_title'][] = "<img src=\"modules/Web_tv_twitch/images/about.png\" alt=\"\" title=\"Plus d'info\" /></a><a href=\"index.php?file=Web_tv_twitch&op=view_tv&id=". $wmp['web_tv'] ."\"><img src=\"modules/Web_tv_twitch/images/jeux/16/". $wmp['jeux'] ."\" alt=\"\" title=\"". htmlentities($wmp['titre_jeux']) ." : ". htmlentities($wmp['titre']) ."\" />";
 					$this->month_data[trim($date_jour_w)]['event_type'][] = "Web_TV";
 				}
 			}
