@@ -14,7 +14,7 @@ Name : Statut chaine par exemple
 <br>
 Redirect URI : url de votre site http://www.mon.site/index.php?file=Webtv
 <br><br>
-<b>Titre de la chaine Twitch</b> : Le nom de votre chaine http://www.twitch.tv/<b>lenomdemachaine</b>
+<b>Titre de la chaine Twitch</b> : Le nom de votre chaine http://www.twitch.tv/<b>lenomdemachaine</b> c'est votre nom d'utilisateur
 <br><br>
 <b>Votre code Client ID</b> : Il se trouve sur http://www.twitch.tv/settings?section=applications
 <br><br>
